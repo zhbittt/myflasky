@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container" style="margin-top: 50px">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>姓名</th>
+                    <th>密码</th>
+                    <th>邮箱</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for context in context_list %}
+                        <tr>
+                        <td>{{ context.id }}</td>
+                        <td>{{ context.username }}</td>
+                        <td>{{ context.password }}</td>
+                        <td>{{ context.email }}</td>
+                        </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+        <nav aria-label="..." class="text-center">
+                <ul class="pagination">
+                    {% for page_html in page_html_list %}
+                        {{ page_html|safe }}
+                    {% endfor %}
+                </ul>
+            </nav>
+    </div>
+
+</body>
+</html>
